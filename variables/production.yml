@@ -1,0 +1,57 @@
+# Production Environment Variables for NIST CSF 2.0
+# Update these values to match your production environment
+
+# Organization Details
+organization_name: "ExampleCorp"
+domain_name: "example.com"
+
+# Network Infrastructure
+mgmt_vlan: "100"
+corporate_vlan: "10"
+guest_vlan: "20" 
+iot_vlan: "30"
+dmz_vlan: "40"
+server_vlan: "50"
+
+# Security Credentials (Use encrypted values in production)
+enable_secret: "C1sc0Secure123!"
+admin_username: "admin"
+snmp_community: "secure_community_2024"
+
+# Network Services
+syslog_server: "10.1.100.10"
+ntp_server1: "time.nist.gov"
+ntp_server2: "pool.ntp.org"
+dns_server1: "8.8.8.8"
+dns_server2: "8.8.4.4"
+
+# SSH Configuration
+ssh_version: "2"
+ssh_timeout: "300"
+ssh_retries: "3"
+
+# Banner Text
+banner_text: "AUTHORIZED USE ONLY - NIST CSF 2.0 Compliant System"
+
+# SNMP Configuration
+snmp_location: "{{ organization_name }} Data Center"
+snmp_contact: "Network Operations <noc@{{ domain_name }}>"
+
+# Logging Configuration
+logging_facility: "local0"
+logging_level: "informational"
+
+# Quality of Service
+qos_policy_name: "NIST_CSF_QOS"
+
+# Archive Settings
+archive_path: "flash:configs/"
+archive_maximum: "10"
+archive_time_period: "1440"  # 24 hours
+
+# Security Policies
+password_min_length: "12"
+login_block_time: "300"
+login_attempts: "3"
+session_timeout: "10"
+absolute_timeout: "30"
